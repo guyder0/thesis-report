@@ -1,0 +1,72 @@
+\documentclass[14pt,a4paper]{extarticle}
+\renewcommand{\abstractname}{Аннотация}
+\usepackage[margin=1in]{geometry}
+
+\usepackage[russian]{babel}
+\usepackage{fontspec}
+
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{unicode-math}
+
+\usepackage{microtype}
+
+\usepackage[outputdir=build]{minted}
+\usemintedstyle{colorful}
+\setminted{
+    fontsize=\small,
+    breaklines,
+    frame=lines,
+    tabsize=4
+}
+
+\setmainfont{STIX Two Text}
+\setmathfont{STIX Two Math}
+\setmonofont{JetBrains Mono}[Scale=MatchLowercase]
+
+\usepackage[unicode,colorlinks=true,linkcolor=black!65!blue,citecolor=black!65!blue,urlcolor=black!65!blue]{hyperref}
+
+\setlength{\parindent}{1.25cm}
+\setlength{\parskip}{0.5\baselineskip}
+
+\newcommand{\refneed}{{\color{red} ТРЕБУЕТСЯ ССЫЛКА}}
+
+\begin{document}
+\hypersetup{pageanchor=false}
+\input{titlepage.tex}
+\clearpage
+
+\include{abstract.tex}
+\clearpage
+
+\hypersetup{pageanchor=true}
+\setcounter{page}{2}
+\tableofcontents
+\clearpage
+
+\section{Прямой объемный рендеринг}
+\input{sec/volume_rendering/sec1.tex}
+
+\section{Обратный рендеринг. Синтез новых видов}
+
+\section{Разработка модели GS}
+
+\clearpage
+\phantomsection
+\addcontentsline{toc}{section}{Список литературы}
+\begin{thebibliography}{99}
+\bibitem{hankerson}
+D.~Hankerson, A.~Menezes, S.~Vanstone.
+\textit{Guide to Elliptic Curve Cryptography}.
+Springer, 2004.
+
+\bibitem{ecgen}
+J.~Jancar.
+\textit{ecgen: Tool for generating elliptic curve domain parameters}.
+GitHub repository.
+\url{https://github.com/J08nY/ecgen}.
+Accessed: 2026-04-15.
+\end{thebibliography}
+
+\end{document}
