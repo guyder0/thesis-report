@@ -10,6 +10,30 @@
 \usepackage{xcolor}
 \usepackage{unicode-math}
 
+% Настройка блоков
+\usepackage[most]{tcolorbox}
+\newtcolorbox{solutionbox}[1]{
+	enhanced,
+	colback=blue!5!white,      % Цвет фона
+	colframe=blue!75!black,    % Цвет рамки
+	fonttitle=\bfseries,
+	title={#1},                % Заголовок блока
+	attach boxed title to top left={xshift=5mm, yshift=-3mm},
+	boxed title style={colback=blue!75!black},
+	sharp corners,             % Острые углы (можно убрать для скругления)
+	drop shadow,               % Тень
+	breakable                  % Чтобы блок переносился на другие страницы
+}
+
+% Настройка библиографии
+\usepackage{csquotes}
+\usepackage[
+backend=biber,
+style=gost-numeric,
+sorting=none
+]{biblatex}
+\addbibresource{refs.bib}
+
 \usepackage{microtype}
 
 \usepackage[outputdir=build]{minted}
@@ -47,26 +71,23 @@
 
 \section{Прямой объемный рендеринг}
 \input{sec/volume_rendering/sec1.tex}
+\input{sec/volume_rendering/sec2.tex}
+\input{sec/volume_rendering/sec3.tex}
 
-\section{Обратный рендеринг. Синтез новых видов}
+\section{Задача синтеза новых видов}
+\subsection{Цели и прикладной смысл задачи}
+\subsection{Нейронное поле излучения (NeRF)}
+\subsection{3D Gaussian Splatting}
 
-\section{Разработка модели GS}
+\section{Процесс построения модели}
+\subsection{Датасет Visible Human Project}
+\subsection{Рендеринг в Blender}
+\subsection{Cистемы координат в COLMAP и Blender}
+\subsection{Веб-просмотрщик сегментированных гауссиан}
 
 \clearpage
 \phantomsection
 \addcontentsline{toc}{section}{Список литературы}
-\begin{thebibliography}{99}
-\bibitem{hankerson}
-D.~Hankerson, A.~Menezes, S.~Vanstone.
-\textit{Guide to Elliptic Curve Cryptography}.
-Springer, 2004.
-
-\bibitem{ecgen}
-J.~Jancar.
-\textit{ecgen: Tool for generating elliptic curve domain parameters}.
-GitHub repository.
-\url{https://github.com/J08nY/ecgen}.
-Accessed: 2026-04-15.
-\end{thebibliography}
+\printbibliography[title={Список литературы}]
 
 \end{document}
