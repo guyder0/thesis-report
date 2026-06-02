@@ -9,6 +9,11 @@
 \usepackage{graphicx}
 \usepackage{xcolor}
 \usepackage{unicode-math}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{dirtree}
 
 % Настройка блоков
 \usepackage[most]{tcolorbox}
@@ -89,10 +94,16 @@ sorting=none
 \input{sec/model/sec2.tex}
 \input{sec/model/sec3.tex}
 \input{sec/model/sec4.tex}
+\input{sec/model/sec5.tex}
 
 \clearpage
 \phantomsection
 \addcontentsline{toc}{section}{Список литературы}
 \printbibliography[title={Список литературы}]
+
+\newpage
+\section*{Приложение}
+\addcontentsline{toc}{section}{Приложение}
+\input{appendix.tex}
 
 \end{document}
