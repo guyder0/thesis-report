@@ -63,6 +63,7 @@ sorting=none
 
 \begin{document}
 \hypersetup{pageanchor=false}
+
 \input{titlepage.tex}
 \clearpage
 
@@ -74,36 +75,46 @@ sorting=none
 \tableofcontents
 \clearpage
 
-\section{3D графика}
-\input{sec/intro/sec1.tex}
-\input{sec/intro/sec2.tex}
+\input{intro.tex}
+\clearpage
 
-\section{Прямой объемный рендеринг}
+\section{Цифровые двойники}
+\input{sec/subconclusion/digital_twins.tex}
+\clearpage
+
+\section{Задача объемного рендеринга и синтеза новых видов}
 \input{sec/volume_rendering/sec1.tex}
 \input{sec/volume_rendering/sec2.tex}
 \input{sec/volume_rendering/sec3.tex}
-
-\section{Задача синтеза новых видов}
 \input{sec/novel_view/sec1.tex}
 \input{sec/novel_view/sec2.tex}
 \input{sec/novel_view/sec3.tex}
 \input{sec/novel_view/sec4.tex}
+\input{sec/subconclusion/3drend_and_novel_view.tex}
+\clearpage
 
 \section{Процесс построения модели}
 \input{sec/model/sec1.tex}
 \input{sec/model/sec2.tex}
 \input{sec/model/sec3.tex}
 \input{sec/model/sec4.tex}
-\input{sec/model/sec5.tex}
-
+\input{sec/subconclusion/model.tex}
 \clearpage
+
+\section{Web-инструмент для просмотра полученной модели}
+\input{sec/splat_webgl/sec1.tex}
+\input{sec/splat_webgl/sec2.tex}
+\input{sec/subconclusion/viewer.tex}
+\clearpage
+
+\input{conclusion.tex}
+\clearpage
+
 \phantomsection
 \addcontentsline{toc}{section}{Список литературы}
 \printbibliography[title={Список литературы}]
 
 \newpage
-\section*{Приложение}
-\addcontentsline{toc}{section}{Приложение}
 \input{appendix.tex}
 
 \end{document}
